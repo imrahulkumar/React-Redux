@@ -145,9 +145,6 @@ Congratulations on completing Day 13 of revising React! Throughout this journey,
 
 I hope you enjoyed this journey and found it helpful in reinforcing your React knowledge. Keep practicing and building exciting applications with React!
 
-This is Arvind Pandit, signing off. Happy React journey!
-
-
 
 ## Deployed URL
 https://imrahulkumar.github.io/React-Redux/
