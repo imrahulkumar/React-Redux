@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useSelector } from "react-redux";
 
 const pages = ['Home'];
 const settings = ['Profile', 'Logout'];
@@ -36,6 +37,8 @@ function Header() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const cartArr = useSelector((store)=> store.cart.cartItems)
 
   return (
     <AppBar position="static">
@@ -132,7 +135,7 @@ function Header() {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
+          <Badge badgeContent={cartArr.length} color="error">
             <ShoppingCartIcon/>
           </Badge>
         </IconButton>

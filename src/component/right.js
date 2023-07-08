@@ -2,32 +2,29 @@ import React from 'react'
 import List from '@mui/material/List';
 import ListItemText from '@mui/material/ListItemText';
 import ListItem from '@mui/material/ListItem';
+import { useSelector } from 'react-redux';
 
-function generate(element: React.ReactElement) {
-  return [0, 1, 2].map((value) =>
-    React.cloneElement(element, {
-      key: value,
-    }),
-  );
-}
+
 
 const Right = () => {
 
  const [dense, setDense] = React.useState(false);
   const [secondary, setSecondary] = React.useState(false);
 
+  const cartArr = useSelector((store) => store.cart.cartItems)
 
 
   return (
    <List dense={dense}>
-              {generate(
-                <ListItem>
+     {
+      cartArr.map((item, index)=> <ListItem>
                   <ListItemText
-                    primary="Single-line item"
+                    primary={item}
+                    key={index}
                     secondary={secondary ? 'Secondary text' : null}
                   />
-                </ListItem>,
-              )}
+                </ListItem>)
+     }
             </List>
   )
 }
